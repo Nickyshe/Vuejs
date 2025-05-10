@@ -2,11 +2,27 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
+//import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
+    
     starlight({
-      title: "My Docs",
+      title: "Vuejs",
+    
+      customCss: [
+        // Path to your Tailwind base styles:
+        './src/styles/global.css',
+      ],
+      logo: {
+        src: './src/assets/logo.svg', // path to your logo file
+        replacesTitle: false
+      },
+      favicon: "./favicon.svg",
+     
+
+
       social: [
         {
           icon: "github",
@@ -161,4 +177,8 @@ export default defineConfig({
       ],
     }),
   ],
+
+  // vite: {
+  //   plugins: [tailwindcss()],
+  // },
 });
